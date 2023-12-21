@@ -1,4 +1,4 @@
-import ROT13 as ROT13
+import decalage as decalage
 
-ROT13.cryptage_rot13("bonjour")
+decalage.cryptage_decalage("sale belge", 3, False)
 
