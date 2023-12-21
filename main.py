@@ -1,4 +1,4 @@
 import decalage as decalage
 
-decalage.cryptage_decalage("sale belge", 3, False)
+decalage.cryptage_decalage("hello", 13, False)
 
