@@ -1,4 +1,6 @@
 import decalage as decalage
 
-decalage.cryptage_decalage("hello", 13, False)
+decalage.cryptage_decalage("ABCD", -1)
+
+decalage.decryptage_decalage("ZABC", -1)
 
