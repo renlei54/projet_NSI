@@ -59,7 +59,7 @@ def cryptage_vigenere(entree: str, cle: str):
     print(sortie_finale)
 
 
-# fonction de cécryptage reprenant beaucoup d'éléments de la fonction de cryptage
+# fonction de cécryptage ne modifiant que la partie de cryptage
 def decryptage_vigenere(entree: str, cle: str):
     sortie = ""
     # retrait des caractères speciaux et des majuscules
@@ -93,11 +93,12 @@ def decryptage_vigenere(entree: str, cle: str):
     # cryptage
     # pour chaque lettre minuscule de l'entree
     for i in range(len(nouvelle_entree)):
-        # calcul des coordonnées dans la table
-        y: int = c.alphabet.index(nouvelle_cle[i])
-        x: int = c.alphabet.index(nouvelle_entree[i])
-        # ajout de la lettre chifrée à la sortie
-        sortie += c.table_de_vigenere[y][x]
+        # utilisation de la clé
+        y: list = c.table_de_vigenere[c.alphabet.index(nouvelle_cle[i])]
+        # recherche du caractère dans la ligne
+        x: int = y.index(nouvelle_entree[i])
+        # ajout de la lettre déchiffrée à la sortie
+        sortie += c.table_de_vigenere[0][x]
     # remise en place des majuscules et des caractères speciaux
     sortie_finale: str = ""
     h: int = 0

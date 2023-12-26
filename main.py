@@ -6,3 +6,6 @@ decalage.cryptage_decalage("Il Etait Une Fois.", -5)
 decalage.decryptage_decalage("Dg Zovdo Piz Ajdn.", -5)
 
 vigenere.cryptage_vigenere("J'adore ecouter la radio toute la journee.", "musique")
+
+vigenere.decryptage_vigenere("V'uvwhy ioimbul pm lslyi xaolm bu naojvuy.", "musique")
+
