@@ -6,20 +6,19 @@ def cryptage_decalage(message: str, valeur: int) -> None:
     # initialisation des variables
     sortie = ""
     majuscules: list = []
+    caracteres_speciaux: list = []
     # pour chaque caractère de l'entrée
     for lettre in message:
         # si le caractère est une majuscule
         if lettre.isupper():
             lettre = lettre.lower()
-            majuscules.append(lettre)
-        # si le caractère est dans l'alphabet
-        if lettre in c.alphabet:
-            # si le caractère était une majuscule
-            if lettre in majuscules:
-                sortie += str(c.alphabet[((c.alphabet.index(lettre)) + valeur) % 26]).upper()
-            # si le caractère était une minuscule
-            else:
-                sortie += c.alphabet[((c.alphabet.index(lettre)) + valeur) % 26]
+            sortie += str(c.alphabet[((c.alphabet.index(lettre)) + valeur) % 26]).upper()
+        # si le caractère est un caractère spécial
+        elif lettre not in c.alphabet:
+            sortie += lettre
+        # si le caractère est une minuscule
+        elif lettre in c.alphabet:
+            sortie += c.alphabet[((c.alphabet.index(lettre)) + valeur) % 26]
     print(sortie)
 
 
