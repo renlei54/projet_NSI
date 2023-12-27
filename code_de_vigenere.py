@@ -115,3 +115,4 @@ def decryptage_vigenere(entree: str, cle: str):
             sortie_finale += sortie[h]
             h += 1
     print(sortie_finale)
+
