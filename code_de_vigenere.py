@@ -4,10 +4,16 @@ import constante as c
 
 # fonction de cryptage
 def cryptage_vigenere(entree: str, cle: str):
-    sortie = ""
+    # initialisation des variables
+    sortie: str = ""
+    nouvelle_cle: str = ""
+    nouvelle_entree: str = ""
+    majuscules: list = []
+    caracteres_speciaux: list = []
+    sortie_finale: str = ""
+    h: int = 0
     # retrait des caractères speciaux et des majuscules
     # nouvelle cle avec des minuscules uniquement
-    nouvelle_cle = ""
     # remise en minuscule
     cle = cle.lower()
     for lettre in cle:
@@ -15,9 +21,6 @@ def cryptage_vigenere(entree: str, cle: str):
         if lettre in c.alphabet:
             nouvelle_cle += lettre
     # nouvelle entree avec uniquement des minuscules
-    nouvelle_entree: str = ""
-    majuscules: list = []
-    caracteres_speciaux: list = []
     for a in range(len(entree)):
         # si c'est une majuscule
         if entree[a].isupper():
@@ -42,8 +45,6 @@ def cryptage_vigenere(entree: str, cle: str):
         # ajout de la lettre chifrée à la sortie
         sortie += c.table_de_vigenere[y][x]
     # remise en place des majuscules et des caractères speciaux
-    sortie_finale: str = ""
-    h: int = 0
     for i in range(len(entree)):
         # ajout des caractères spéciaux
         if i in caracteres_speciaux:
@@ -51,10 +52,12 @@ def cryptage_vigenere(entree: str, cle: str):
         # ajout des majuscules
         elif i in majuscules:
             sortie_finale += sortie[h].upper()
+            # lettre suivante
             h += 1
         # ajout des lettres
         else:
             sortie_finale += sortie[h]
+            # lettre suivante
             h += 1
     print(sortie_finale)
 
@@ -62,19 +65,21 @@ def cryptage_vigenere(entree: str, cle: str):
 # fonction de cécryptage ne modifiant que la partie de cryptage
 def decryptage_vigenere(entree: str, cle: str):
     sortie = ""
+    nouvelle_cle = ""
+    nouvelle_entree: str = ""
+    majuscules: list = []
+    caracteres_speciaux: list = []
+    sortie_finale: str = ""
+    h: int = 0
     # retrait des caractères speciaux et des majuscules
     # nouvelle cle avec des minuscules uniquement
-    nouvelle_cle = ""
     # remise en minuscule
     cle = cle.lower()
     for lettre in cle:
         # ajout des lettres uniquements
         if lettre in c.alphabet:
             nouvelle_cle += lettre
-    # nouvelle entree avec uniquement des minuscules
-    nouvelle_entree: str = ""
-    majuscules: list = []
-    caracteres_speciaux: list = []
+    # nouvelle entree avec uniquement des minuscule
     for a in range(len(entree)):
         # si c'est une majuscule
         if entree[a].isupper():
@@ -100,8 +105,6 @@ def decryptage_vigenere(entree: str, cle: str):
         # ajout de la lettre déchiffrée à la sortie
         sortie += c.table_de_vigenere[0][x]
     # remise en place des majuscules et des caractères speciaux
-    sortie_finale: str = ""
-    h: int = 0
     for i in range(len(entree)):
         # ajout des caractères spéciaux
         if i in caracteres_speciaux:
@@ -109,10 +112,12 @@ def decryptage_vigenere(entree: str, cle: str):
         # ajout des majuscules
         elif i in majuscules:
             sortie_finale += sortie[h].upper()
+            # lettre suivante
             h += 1
         # ajout des lettres
         else:
             sortie_finale += sortie[h]
+            # lettre suivante
             h += 1
     print(sortie_finale)
 

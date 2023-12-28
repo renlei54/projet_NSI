@@ -2,7 +2,7 @@
 import constante as c
 
 
-def cryptage_decalage(entree: str, valeur: int) -> None:
+def cryptage_cesar(entree: str, valeur: int) -> None:
     # initialisation des variables
     sortie = ""
     majuscules: list = []
@@ -22,6 +22,5 @@ def cryptage_decalage(entree: str, valeur: int) -> None:
     print(sortie)
 
 
-
-def decryptage_decalage(entree: str, valeur: int):
-    cryptage_decalage(entree, -valeur)
+def decryptage_cesar(entree: str, valeur: int):
+    cryptage_cesar(entree, -valeur)
