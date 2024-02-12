@@ -1,6 +1,7 @@
 import code_de_cesar as cesar
 import code_de_vigenere as vigenere
 import carre_de_polybe as polybe
+import PySimpleGUI as gui
 
 methode: int = int(input("Choisissez une méthode de chiffrement: 1 -> ROT13 ; 2 -> code de César ; 3 -> code de Vigenère ; 4 -> carre de Polybe"))
 action: int = int(input("Voulez vous crypter ou décrypter votre message ? 1 -> crypter ; 2 -> décrypter"))
