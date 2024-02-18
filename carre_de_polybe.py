@@ -3,11 +3,9 @@ import constante as c
 
 
 # fonction de cryptage
-def cryptage_polybe(entree: str) -> None:
+def cryptage_polybe(entree: str) -> str:
     # initialisation des variables
     sortie: str = ""
-    majuscules: list = []
-    caracteres_speciaux: list = []
     # pour chaque caractère de l'entrée
     for lettre in entree:
         # si le caractère est un w
@@ -26,11 +24,11 @@ def cryptage_polybe(entree: str) -> None:
         # si le caractère est un caractère spécial
         else:
             sortie += lettre
-    print(sortie)
+    return sortie
 
 
 # fonction de décryptage
-def decryptage_polybe(entree: str) -> None:
+def decryptage_polybe(entree: str) -> str:
     # initialisation des variables
     sortie: str = ""
     sortie_finale: str = ""
@@ -50,5 +48,5 @@ def decryptage_polybe(entree: str) -> None:
         # ajout des caractères spéciaux
         else:
             sortie_finale += sortie[i]
-    print(sortie_finale)
+    return sortie_finale
 

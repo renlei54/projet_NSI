@@ -2,11 +2,9 @@
 import constante as c
 
 
-def cryptage_cesar(entree: str, valeur: int) -> None:
+def cryptage_cesar(entree: str, valeur: int) -> str:
     # initialisation des variables
     sortie = ""
-    majuscules: list = []
-    caracteres_speciaux: list = []
     # pour chaque caractère de l'entrée
     for lettre in entree:
         # si le caractère est une minuscule
@@ -19,8 +17,8 @@ def cryptage_cesar(entree: str, valeur: int) -> None:
         # si le caractère est un caractère spécial
         else:
             sortie += lettre
-    print(sortie)
+    return sortie
 
 
-def decryptage_cesar(entree: str, valeur: int):
-    cryptage_cesar(entree, -valeur)
+def decryptage_cesar(entree: str, valeur: int) -> str:
+    return cryptage_cesar(entree, -valeur)

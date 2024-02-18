@@ -4,6 +4,7 @@ import constante as c
 
 # fonction de cryptage
 def cryptage_vigenere(entree: str, cle: str):
+    if cle.strip() == "": return "--== Clé invalide ==--"
     # initialisation des variables
     sortie: str = ""
     nouvelle_cle: str = ""
@@ -59,11 +60,12 @@ def cryptage_vigenere(entree: str, cle: str):
             sortie_finale += sortie[h]
             # lettre suivante
             h += 1
-    print(sortie_finale)
+    return sortie_finale
 
 
 # fonction de cécryptage ne modifiant que la partie de cryptage
 def decryptage_vigenere(entree: str, cle: str):
+    if cle.strip() == "": return "--== Clé invalide ==--"
     sortie = ""
     nouvelle_cle = ""
     nouvelle_entree: str = ""
@@ -119,5 +121,5 @@ def decryptage_vigenere(entree: str, cle: str):
             sortie_finale += sortie[h]
             # lettre suivante
             h += 1
-    print(sortie_finale)
+    return sortie_finale
 
