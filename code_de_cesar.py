@@ -20,5 +20,6 @@ def cryptage_cesar(entree: str, valeur: int) -> str:
     return sortie
 
 
+# fonction de décryptage
 def decryptage_cesar(entree: str, valeur: int) -> str:
     return cryptage_cesar(entree, -valeur)
